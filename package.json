@@ -1,0 +1,32 @@
+{
+  "name": "crawl4ai-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Crawl4AI - web crawling and content extraction",
+  "author": "ril3y <rileyporter@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "crawl4ai-mcp-server": "./src/index.js"
+  },
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
+  "keywords": [
+    "mcp",
+    "crawl4ai",
+    "web-crawler",
+    "claude",
+    "model-context-protocol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ril3y/crawl4ai-mcp-server"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
