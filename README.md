@@ -5,31 +5,15 @@ An MCP (Model Context Protocol) server that wraps a [Crawl4AI](https://github.co
 ## Prerequisites
 
 - Node.js >= 18
-- A running Crawl4AI server
+- A running [Crawl4AI](https://github.com/unclecode/crawl4ai) server
 
-## Installation
-
-### Add to Claude Code (directly from GitHub)
+## Install for Claude Code
 
 ```bash
-claude mcp add crawl4ai -- npx github:ril3y/crawl4ai-mcp-server http://your-server:11235
+claude mcp add crawl4ai -- npx github:ril3y/crawl4ai-mcp-server http://192.168.1.206:11235
 ```
 
-### Add to Claude Code (from local clone)
-
-```bash
-claude mcp add crawl4ai -- node /path/to/crawl4ai-mcp-server/src/index.js http://your-server:11235
-```
-
-## Usage
-
-The server URL is a **required** argument:
-
-```
-crawl4ai-mcp-server <crawl4ai-url>
-```
-
-You can also set it via the `CRAWL4AI_BASE_URL` environment variable as a fallback.
+Replace `http://192.168.1.206:11235` with your Crawl4AI server URL.
 
 ## Tools
 
