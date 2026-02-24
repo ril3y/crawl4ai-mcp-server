@@ -5,28 +5,31 @@ An MCP (Model Context Protocol) server that wraps a [Crawl4AI](https://github.co
 ## Prerequisites
 
 - Node.js >= 18
-- A running Crawl4AI server (default: `http://192.168.1.206:11235`)
+- A running Crawl4AI server
 
 ## Installation
 
-### Add to Claude Code
+### Add to Claude Code (directly from GitHub)
 
 ```bash
-claude mcp add crawl4ai -- node /Users/ril3y/projects/crawl4ai-mcp-server/src/index.js
+claude mcp add crawl4ai -- npx github:ril3y/crawl4ai-mcp-server http://your-server:11235
 ```
 
-To use a custom Crawl4AI server URL:
+### Add to Claude Code (from local clone)
 
 ```bash
-claude mcp add crawl4ai -e CRAWL4AI_BASE_URL=http://your-server:11235 -- node /Users/ril3y/projects/crawl4ai-mcp-server/src/index.js
+claude mcp add crawl4ai -- node /path/to/crawl4ai-mcp-server/src/index.js http://your-server:11235
 ```
 
-### Install globally via npm
+## Usage
 
-```bash
-npm install -g .
-claude mcp add crawl4ai -- crawl4ai-mcp-server
+The server URL is a **required** argument:
+
 ```
+crawl4ai-mcp-server <crawl4ai-url>
+```
+
+You can also set it via the `CRAWL4AI_BASE_URL` environment variable as a fallback.
 
 ## Tools
 
@@ -42,12 +45,6 @@ claude mcp add crawl4ai -- crawl4ai-mcp-server
 - **word_count_threshold** - Minimum word count for content blocks (default: 10)
 - **bypass_cache** - Force a fresh crawl, ignoring cache (default: false)
 - **css_selector** - CSS selector to extract specific page sections
-
-## Environment Variables
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `CRAWL4AI_BASE_URL` | `http://192.168.1.206:11235` | Base URL of your Crawl4AI server |
 
 ## License
 

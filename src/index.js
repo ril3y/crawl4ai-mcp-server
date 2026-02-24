@@ -4,7 +4,13 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-const CRAWL4AI_BASE_URL = process.env.CRAWL4AI_BASE_URL || "http://192.168.1.206:11235";
+const CRAWL4AI_BASE_URL = process.argv[2] || process.env.CRAWL4AI_BASE_URL;
+
+if (!CRAWL4AI_BASE_URL) {
+  console.error("Usage: crawl4ai-mcp-server <crawl4ai-url>");
+  console.error("Example: crawl4ai-mcp-server http://192.168.1.206:11235");
+  process.exit(1);
+}
 
 async function makeRequest(path, options = {}) {
   const url = `${CRAWL4AI_BASE_URL}${path}`;
